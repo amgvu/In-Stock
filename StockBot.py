@@ -16,20 +16,20 @@ def check_availability(url, phrase):
             return False
         return True
     except:
-        log += "Error parsing the website"
+        log += "Error parsing site"
 
 
 def main():
     global log
-    url = "https://us.maxgaming.com/us/wireless-mouses/atlantis-wireless-superlight-gaming-mouse-white"
+    url = "https://fakeitem.com"
     phrase = "Availability: 0 left in stock"
     available = check_availability(url, phrase)
 
     logfile = open('log.txt', 'r+')
     
-    successmessage = "LAMZU ATLANTIS IN STOCK"
+    successmessage = "PRODUCT IN STOCK"
     if successmessage in logfile.read():
-        print("LAMZU ATLANTIS ALREADY FOUND IN STOCK ")
+        print("PRODUCT ALREADY FOUND IN STOCK ")
         return
 
     if available:
@@ -42,29 +42,29 @@ def main():
                 fromAddress = config['fromAddress']
                 toAddress = config['toAddress']
         except:
-            log += "Error with the credentials file "
+            log += "Error with credentials "
 
 
         msg = EmailMessage()
-        msg['Subject'] = "LAMZU ATLANTIS IN STOCK "
+        msg['Subject'] = "PRODUCT IS IN STOCK "
         msg['From'] = fromAddress
         msg['To'] = toAddress
-        msg.set_content("Lamzu Atlantis back in stock. If you're reading this after an hour. My condolences." + url)
+        msg.set_content("It's back in stock. If you're reading this after an hour. My condolences." + url)
         
         try:
-            server = smtplib.SMTP('smtp.gmail.com', 587)
+            server = smtplib.SMTP('smtp.', 587)
             server.ehlo()
             server.starttls()
             server.login(username, password)
 
             server.send_message(msg)
             server.quit()
-            log += "Message sent! "
+            log += "Message sent "
         except:
             log += "Error sending message "
     
     else:
-        log += "No Lamzu Atlantis mice are available "
+        log += "No products are available "
     logfile.write(str(datetime.now()) + " " + log + "\n")
     logfile.close()
         
