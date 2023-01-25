@@ -1,1 +1,1 @@
-# StockBot
+# StockCheckerBot
