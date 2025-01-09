@@ -1,6 +1,6 @@
 # StockCheckerBot
 Setup
-1. Clone repo, delete the current .venv folder included
+1. Clone repo
 2. In the console, install a virtual environment with
 ```
 python3 -m venv .venv
