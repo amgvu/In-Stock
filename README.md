@@ -3,7 +3,7 @@ Setup
 1. Clone repo
 2. In the console, install a virtual environment with
 ```
-python3 -m venv .venv
+python -m venv .venv
 ```
 2. Run python file in terminal
 3. Install BeautifulSoup with
