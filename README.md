@@ -1,4 +1,4 @@
-# SpotBot
+# ShopSentry
 Setup
 1. Clone repo
 2. In the console, install a virtual environment with
